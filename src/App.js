@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Test from "./test";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    inputValue: ""
+  };
+
+  changeInput = e => {
+    const changeValue = e.target.value;
+    this.setState({ inputValue: changeValue });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>Test-1</h1>
+        </header>
+        <Test
+          inputValue={this.state.inputValue}
+          changeInput={this.changeInput}
+        />
+        이력서
+        <br />
+        연락처
+        <br />
+        포트폴리오
+        <br />
+      </div>
+    );
+  }
 }
 
 export default App;
