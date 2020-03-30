@@ -10,6 +10,7 @@ const Test = props => {
         <input value={props.inputValue} onChange={props.changeInput}></input>
         <button onClick={clickAlertValue}>눌러!</button>
       </div>
+      <p>테스트123</p>
     </div>
   );
 };
